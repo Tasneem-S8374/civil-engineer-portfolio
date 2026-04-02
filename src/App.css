@@ -1,38 +1,719 @@
-.App {
+/* ======================================
+   GLOBAL
+====================================== */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0b1d3a;  /* TRUE NAVY */
+  color: #ffffff;
+}
+
+section {
+  padding: 110px 0;
+}
+
+/* ======================================
+   NAVBAR
+====================================== */
+.navbar {
+  background: #0b1d3a !important;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.75) !important;
+  margin-left: 28px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* ======================================
+   HERO SECTION
+====================================== */
+.hero {
+  height: 100vh;
+  background: linear-gradient(180deg, #0b1d3a 0%, #0f274f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.btn-primary-pro {
+  background: #ffffff;
+  color: #0b1d3a;
+  padding: 14px 42px;
+  border-radius: 50px;
+  font-weight: 600;
+  border: none;
+  margin-right: 18px;
+  transition: 0.3s;
+}
+
+.btn-primary-pro:hover {
+  background: #e2e8f0;
+  transform: translateY(-3px);
+}
+
+.btn-outline-pro {
+  border: 2px solid #ffffff;
+  padding: 14px 42px;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-outline-pro:hover {
+  background: #ffffff;
+  color: #0b1d3a;
+}
+
+/* ======================================
+   STATS
+====================================== */
+.stats {
+  background: #0f274f;
+  text-align: center;
+}
+
+.stat-box h2 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.stat-box p {
+  color: rgba(255,255,255,0.7);
+}
+
+/* ======================================
+   SERVICES
+====================================== */
+.services {
+  background: #ffffff;
+  color: #1e293b;
+}
+
+.service-card {
+  background: #f4f7fb;
+  padding: 45px;
+  border-radius: 16px;
+  border-left: 6px solid #0b1d3a;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+  transition: 0.4s;
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
+}
+
+.service-card h4 {
+  font-weight: 700;
+  color: #0b1d3a;
+}
+
+/* ======================================
+   PORTFOLIO
+====================================== */
+.portfolio {
+  background: #0b1d3a;
+}
+
+.portfolio h2 {
+  color: #ffffff;
+}
+
+.portfolio-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  transition: 0.4s;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.portfolio-card:hover {
+  transform: scale(1.06);
+}
+
+/* ======================================
+   PLANS
+====================================== */
+.plans {
+  background: #ffffff;
+  color: #1e293b;
+}
+
+.plan-card {
+  background: #f4f7fb;
+  padding: 45px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  transition: 0.4s;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+}
+
+.plan-card .btn {
+  background: #0b1d3a;
+  border-radius: 50px;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ======================================
+   FOOTER
+====================================== */
+.footer {
+  background: #0b1d3a;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 70px 0;
+  color: rgba(255,255,255,0.75);
+}
+
+.footer h5 {
+  color: #ffffff;
+}
+
+/* Scroll To Top Button */
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0b1d3a;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 999;
+  transition: 0.3s;
+}
+
+.scroll-top-btn:hover {
+  background: #142f5e;
+}
+
+/* ===============================
+   CONTACT SECTION
+=============================== */
+.contact-section {
+  background: #0b1d3a;
+  padding: 100px 0;
+}
+
+.contact-card {
+  background: #0b1d3a;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+
+.contact-card h2 {
+  color: white
+}
+
+.contact-card p {
+  color: white
+}
+
+.form-control {
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #0b1d3a;
+}
+
+.whatsapp-btn {
+  background: #0b1d3a;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+}
+
+.whatsapp-btn:hover {
+  background: #142f5e;
+}
+
+/* ===============================
+   FLOATING LABEL STYLE
+=============================== */
+/* ================================
+   FLOATING INPUT FIX
+================================ */
+
+.floating-input {
+  position: relative;
+}
+
+.floating-input input,
+.floating-input textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.08);  /* subtle navy glass */
+  color: #ffffff;
+  outline: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Placeholder Color */
+.floating-input input::placeholder,
+.floating-input textarea::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+/* Focus Effect */
+.floating-input input:focus,
+.floating-input textarea:focus {
+  border-color: #ffffff;
+  background: rgba(255,255,255,0.12);
+}
+
+/* Label Styling */
+.floating-input label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: rgba(255,255,255,0.65);
+  font-size: 14px;
   pointer-events: none;
+  transition: 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Float Animation */
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown) + label,
+.floating-input textarea:focus + label,
+.floating-input textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  background: #0b1d3a;
+  padding: 0 6px;
+  color: #ffffff;
+}
+/* Contact Section Colors */
+/* ================================
+   CONTACT SECTION BACKGROUND
+================================ */
+.contact-section {
+  background: linear-gradient(180deg, #0b1d3a 0%, #0f274f 100%);
+  padding: 120px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ================================
+   GLASS CARD
+================================ */
+.contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+
+/* ================================
+   TITLE
+================================ */
+.contact-title {
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+}
+
+.contact-info {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ================================
+   FLOATING INPUTS
+================================ */
+.floating-input {
+  position: relative;
+}
+
+.floating-input input,
+.floating-input textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: #ffffff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.floating-input label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.floating-input input:focus,
+.floating-input textarea:focus {
+  border-color: #ffffff;
+}
+
+.floating-input input:focus + label,
+.floating-input input:valid + label,
+.floating-input textarea:focus + label,
+.floating-input textarea:valid + label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  background: #0b1d3a;
+  padding: 0 6px;
+  color: #ffffff;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+.btn-navy {
+  background: #ffffff;
+  color: #0b1d3a;
+  border: none;
+  padding: 12px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-navy:hover {
+  background: #e2e8f0;
+}
+
+.btn-outline-navy {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 12px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-outline-navy:hover {
+  background: #ffffff;
+  color: #0b1d3a;
+}
+.portfolio-section {
+  background: #0b1f3a; /* deep navy */
+}
+
+.portfolio-image {
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+/* Make carousel arrows bold and large */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100% 100%;
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1); /* makes arrow white */
+}
+
+/* Add circular navy background */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+}
+
+.carousel-control-prev span,
+.carousel-control-next span {
+  background-color: rgba(11, 31, 58, 0.9); /* deep navy */
+  padding: 25px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.carousel-control-prev span:hover,
+.carousel-control-next span:hover {
+  background-color: #142f55;
+  transform: scale(1.1);
+}
+.custom-arrow {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  background: rgba(11, 31, 58, 0.9);
+  padding: 10px 20px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.custom-arrow:hover {
+  background: #142f55;
+  transform: scale(1.2);
+}
+
+.plans-section {
+  background: #0b1f3a; /* deep navy */
+}
+
+.plan-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.plan-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.plan-img-wrapper {
+  overflow: hidden;
+}
+
+.plan-img {
+  height: 280px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.plan-card:hover .plan-img {
+  transform: scale(1.05);
+}
+
+/* Navy Heading */
+.text-navy {
+  color: #0b1f3a;
+}
+
+/* Premium Download Button */
+.btn-navy-download {
+  background: #0b1f3a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.btn-navy-download:hover {
+  background: #142f55;
+  transform: translateY(-2px);
+}
+.plans-section {
+  background: #0b1f3a;
+}
+
+.plans-slider-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.plans-container {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  width: 100%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.plan-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 32%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+}
+
+.plan-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.plan-content {
+  padding: 15px;
+}
+
+.plan-content h5 {
+  font-weight: 700;
+  color: #0b1f3a;
+}
+
+.plan-content p {
+  font-size: 14px;
+  color: #555;
+}
+
+.btn-download {
+  background: #0b1f3a;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-download:hover {
+  background: #142f55;
+}
+
+/* Arrow Buttons */
+.arrow-btn {
+  background: white;
+  border: none;
+  font-size: 24px;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background: #0b1f3a;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.arrow-btn.left {
+  margin-right: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.arrow-btn.right {
+  margin-left: 15px;
+}
+.plans-section {
+  background: #0b1f3a;
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+}
+
+.plan-card {
+  min-width: 32%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+}
+
+.plan-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.plan-content {
+  padding: 15px;
+}
+
+.plan-content h5 {
+  font-weight: 700;
+  color: #0b1f3a;
+}
+
+.plan-content p {
+  font-size: 14px;
+  color: #555;
+}
+
+.btn-download {
+  background: #0b1f3a;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-download:hover {
+  background: #142f55;
+}
+
+/* Arrow Styling */
+.arrow-btn {
+  background: white;
+  border: none;
+  font-size: 24px;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background: #0b1f3a;
+  color: white;
+}
+
+.arrow-btn.left {
+  margin-right: 15px;
+}
+
+.arrow-btn.right {
+  margin-left: 15px;
 }

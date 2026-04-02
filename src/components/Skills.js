@@ -1,31 +1,45 @@
-export default function Skills() {
-  const skills = [
-    "Project Planning & Scheduling",
-    "Site Execution & Supervision",
-    "BOQ & Cost Estimation",
-    "Surveying & Layout Marking",
-    "AutoCAD & Drawing Review",
-    "Quality Control (QA/QC)",
-    "Contract Administration",
-    "Vendor & Client Coordination",
-    "Risk Management",
-    "Team Leadership",
-    "Billing & Measurements",
-    "Safety Compliance",
-  ];
+import React from "react";
 
+const Skills = () => {
   return (
-    <section id="skills" className="section bg-light">
+    <section id="skills" className="py-5">
       <div className="container">
-        <h2 className="title mb-4">Core Skills</h2>
+        <h2 className="fw-bold text-center mb-5">Technical Expertise</h2>
+
         <div className="row">
-          {skills.map((s) => (
-            <div key={s} className="col-md-4 mb-3">
-              <div className="card p-3 card-hover text-center">{s}</div>
-            </div>
-          ))}
+          <div className="col-md-4">
+            <h5 className="fw-bold">Frontend Architecture</h5>
+            <ul className="list-group">
+              <li className="list-group-item">React 16/17/18</li>
+              <li className="list-group-item">Redux Toolkit</li>
+              <li className="list-group-item">Micro Frontends</li>
+              <li className="list-group-item">Performance Optimization</li>
+            </ul>
+          </div>
+
+          <div className="col-md-4">
+            <h5 className="fw-bold">Backend Collaboration</h5>
+            <ul className="list-group">
+              <li className="list-group-item">REST APIs</li>
+              <li className="list-group-item">Spring Boot</li>
+              <li className="list-group-item">Node.js</li>
+              <li className="list-group-item">JWT & OAuth</li>
+            </ul>
+          </div>
+
+          <div className="col-md-4">
+            <h5 className="fw-bold">DevOps & Cloud</h5>
+            <ul className="list-group">
+              <li className="list-group-item">AWS</li>
+              <li className="list-group-item">Docker</li>
+              <li className="list-group-item">CI/CD Pipelines</li>
+              <li className="list-group-item">GitHub Actions</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Skills;

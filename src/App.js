@@ -1,23 +1,32 @@
-import Navbar from "./components/Navbar";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import NavbarSection from "./components/NavbarSection";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
+import Stats from "./components/Stats";
 import Services from "./components/Services";
-import Projects from "./components/Projects";
-import Experience from "./components/Experience";
+import Portfolio from "./components/Portfolio";
+import Plans from "./components/Plans";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import ParticlesBackground from "./components/ParticlesBackground";
+import "./App.css";
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
     <>
-      <Navbar />
+      <ParticlesBackground />
+      <NavbarSection />
       <Hero />
-      <About />
-      <Skills />
+      <Stats />
       <Services />
-      <Projects />
-      <Experience />
+      <Portfolio />
+      <Plans />
       <Contact />
+      <Footer />
     </>
   );
 }

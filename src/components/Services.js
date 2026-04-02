@@ -1,49 +1,38 @@
-export default function Services() {
+import React from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import Tilt from "react-parallax-tilt";
+
+const Services = () => {
   const services = [
     {
-      title: "Project Planning",
-      desc: "Detailed project scheduling, resource planning, and milestone tracking for large-scale construction works.",
+      title: "Interior Designing",
+      desc: "3D visualization & premium interiors.",
     },
-    {
-      title: "Site Execution",
-      desc: "End-to-end supervision ensuring quality, safety, and timely delivery of projects.",
-    },
-    {
-      title: "Surveying & Layout",
-      desc: "DGPS, total station surveys, and accurate layout marking for residential and commercial sites.",
-    },
-    {
-      title: "BOQ & Estimation",
-      desc: "Cost estimation, quantity take-offs, and budget preparation for efficient project control.",
-    },
-    {
-      title: "Quality Assurance",
-      desc: "Implementing QA/QC processes to maintain construction standards and compliance.",
-    },
-    {
-      title: "Client Coordination",
-      desc: "Managing communication between stakeholders to ensure smooth project execution.",
-    },
+    { title: "Survey Works", desc: "DGPS, ETS & contour mapping." },
+    { title: "Construction Planning", desc: "BOQ & structural planning." },
   ];
 
   return (
-    <section id="services" className="py-5">
-      <div className="container section-box">
-        <h2 className="text-center fw-bold text-warning mb-4">Our Services</h2>
-
-        <div className="row">
-          {services.map((s, i) => (
-            <div key={i} className="col-md-4 mb-3">
-              <div className="card h-100 shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title text-warning">{s.title}</h5>
-                  <p className="card-text">{s.desc}</p>
-                </div>
-              </div>
-            </div>
+    <section id="services" className="portfolio-section">
+      <Container>
+        <h2 className="text-center text-white mb-5" data-aos="fade-up">
+          Our Premium Services
+        </h2>
+        <Row>
+          {services.map((service, index) => (
+            <Col md={4} key={index} data-aos="zoom-in">
+              <Tilt glareEnable={true} glareMaxOpacity={0.2}>
+                <Card className="service-card p-4 text-center">
+                  <h4 className="text-blue">{service.title}</h4>
+                  <p>{service.desc}</p>
+                </Card>
+              </Tilt>
+            </Col>
           ))}
-        </div>
-      </div>
+        </Row>
+      </Container>
     </section>
   );
-}
+};
+
+export default Services;
